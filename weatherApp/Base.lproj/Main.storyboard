@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tempest-->
+        <!--Temp Getter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,7 +85,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Tempest" id="TDw-bY-iAM">
+                    <navigationItem key="navigationItem" title="Temp Getter" id="TDw-bY-iAM">
                         <barButtonItem key="rightBarButtonItem" title="Change Location" style="plain" id="AOJ-bW-KoG">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2rn-b2-kV0">
                                 <rect key="frame" x="243" y="7" width="116" height="30"/>
