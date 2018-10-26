@@ -12,7 +12,7 @@
         <!--Temp Getter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WeatherDisplayViewController" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,6 +97,13 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="currentTempLabel" destination="7B6-Ba-U9i" id="lBj-2e-Mjx"/>
+                        <outlet property="highTempLabel" destination="m2Z-ay-Osf" id="CUz-RO-d6m"/>
+                        <outlet property="iconLabel" destination="6rw-gc-4A6" id="Itp-8u-diX"/>
+                        <outlet property="locationLabel" destination="2U5-zv-hZN" id="6Ry-2F-EBP"/>
+                        <outlet property="lowTempLabel" destination="OQq-J2-XMX" id="zDu-KL-Cia"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +112,7 @@
         <!--Change Location-->
         <scene sceneID="UHV-pw-tI5">
             <objects>
-                <viewController title="Change Location" id="2th-ik-M2y" sceneMemberID="viewController">
+                <viewController title="Change Location" id="2th-ik-M2y" customClass="LocationSelectorViewController" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KW7-Zt-hiz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,6 +130,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Nw-yO-2Wi"/>
                     </view>
+                    <connections>
+                        <outlet property="locationSearchBar" destination="iEr-BR-NrT" id="JpU-04-o7f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEz-lx-1wA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

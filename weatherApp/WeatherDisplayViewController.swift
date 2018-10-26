@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WeatherDisplayViewController.swift
 //  weatherApp
 //
 //  Created by Spencer Casteel on 10/24/18.
@@ -10,11 +10,20 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController {
+class WeatherDisplayViewController: UIViewController {
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var iconLabel: UILabel!
+    @IBOutlet weak var currentTempLabel: UILabel!
+    @IBOutlet weak var highTempLabel: UILabel!
+    @IBOutlet weak var lowTempLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        setupDefaultUI()
         
         let apiKeys = APIKeys()
         
@@ -33,14 +42,14 @@ class ViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
+               print(json)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
         
-        let googleBaseURL = "https://maps.googlepis.com/maps/api/geocode/json?address="
-        let googleRequestURL = googleBaseURL + "Glasgow,+Kentucky" + apiKeys.googleKey
+        let googleBaseURL = "https://maps.googleapis.com/maps/api/geocode/json?address="
+        let googleRequestURL = googleBaseURL + "Glasgow,+Kentucky" + "&key=" + apiKeys.googleKey
         let googleRequest = Alamofire.request(googleRequestURL)
         
         googleRequest.responseJSON { response in
@@ -52,6 +61,15 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    //this function will give the UI some default whenever we first load the app
+    func setupDefaultUI() {
+        locationLabel.text = ""
+        iconLabel.text = "🚀"
+        currentTempLabel.text = "Enter a location!"
+        highTempLabel.text = "-"
+        lowTempLabel.text = "-"
     }
 }
 
